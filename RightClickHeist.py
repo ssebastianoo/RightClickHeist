@@ -1,8 +1,10 @@
 import requests, time, sys
 
 webhook_url = None
+sleep_time = .25
 if len(sys.argv) > 1:
     webhook_url = sys.argv[1]
+    sleep_time = 2
 
 offset = 0
 
@@ -30,4 +32,4 @@ while True:
                             myfile.write(image.content)
             break
     offset += 1
-    time.sleep(.25)
+    time.sleep(sleep_time)
